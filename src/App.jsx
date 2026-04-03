@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -430,6 +431,7 @@ const App = () => {
             <a href="#attendance-section" className="hover:text-orange-600 transition-colors">attendance</a>
             <a href="#timetable-section" className="hover:text-orange-600 transition-colors">timetable</a>
             <a href="#whats-new" className="hover:text-orange-600 transition-colors">what's new</a>
+            <Link to="/privacy" className="hover:text-orange-600 transition-colors">privacy</Link>
           </div>
           <div className="hidden md:flex gap-3">
             {isAndroid && <a href={APK_URL} className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all flex items-center gap-2"><Download className="w-4 h-4" /> Download APK</a>}
@@ -618,7 +620,7 @@ const App = () => {
           </div>
           <p className="text-slate-500 text-sm mb-6">Built by <a href="https://www.linkedin.com/in/raghav-taneja-bb84412b7/" target="_blank" rel="noopener noreferrer" className="font-bold text-slate-900 hover:text-[#FF9500]">Raghav Taneja</a>. Not affiliated with Chitkara University.</p>
           <a href="mailto:raghavtaneja2808@gmail.com" className="text-slate-400 text-sm hover:text-[#FF9500] block mb-8">raghavtaneja2808@gmail.com</a>
-          <div className="flex justify-center gap-6 text-xs font-bold uppercase tracking-wider text-slate-400"><a href="#" className="hover:text-[#FF9500]">Privacy</a><a href="#" className="hover:text-[#FF9500]">Terms</a><a href="#" className="hover:text-[#FF9500]">Contact</a></div>
+          <div className="flex justify-center gap-6 text-xs font-bold uppercase tracking-wider text-slate-400"><Link to="/privacy" className="hover:text-[#FF9500]">Privacy</Link><Link to="/privacy" className="hover:text-[#FF9500]">Terms</Link><a href="mailto:meesha140203@gmail.com" className="hover:text-[#FF9500]">Contact</a></div>
           <p className="text-slate-300 text-[10px] mt-6">v2.0.0</p>
         </footer>
       </main>
