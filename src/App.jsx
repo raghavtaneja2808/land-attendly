@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* CONFIGURATION */
 const APP_URL = "https://attendly-xi.vercel.app/";
-const APK_URL = "/Attendly.apk";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.attendly.app";
 
 // --- ICONS ---
 const IconWrapper = ({ children, className }) => (
@@ -434,10 +434,9 @@ const App = () => {
             <Link to="/privacy" className="hover:text-orange-600 transition-colors">privacy</Link>
           </div>
           <div className="hidden md:flex gap-3">
-            {isAndroid && <a href={APK_URL} className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all flex items-center gap-2"><Download className="w-4 h-4" /> Download APK</a>}
+            {isAndroid && <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all flex items-center gap-2"><Download className="w-4 h-4" /> Get on Play Store</a>}
             {(isIOS || isDesktop) && <button onClick={handleOpenApp} className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all">Open Web App</button>}
-            {isDesktop && <a href={APK_URL} download="attendly.apk" className="bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 p-2.5 rounded-full" title="Download APK"><Download className="w-4 h-4" /></a>}
-          </div>
+            {isDesktop && <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-4 py-2.5 rounded-full text-sm font-bold transition-all flex items-center gap-2" title="Get on Play Store"><Download className="w-4 h-4" /> Play Store</a>}          </div>
         </div>
       </nav>
 
@@ -461,8 +460,7 @@ const App = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                   {(isIOS || isDesktop) && <button onClick={handleOpenApp} className="w-full sm:w-auto h-14 px-8 bg-[#FF9500] hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 transition-all hover:-translate-y-1 flex items-center justify-center gap-3"><span>Open Web App</span><ChevronRight className="w-5 h-5" /></button>}
-                  {(isAndroid || isDesktop) && <a href={APK_URL} download={isDesktop ? "attendly.apk" : undefined} className={`w-full sm:w-auto h-14 px-8 rounded-2xl font-bold text-lg border transition-all flex items-center justify-center gap-3 ${isDesktop ? "bg-white hover:bg-slate-50 text-slate-700 border-slate-200" : "bg-[#FF9500] hover:bg-orange-600 text-white shadow-xl shadow-orange-500/25"}`}><Download className="w-5 h-5" /><span>Download APK</span></a>}
-                  {isIOS && !isStandalone && <button onClick={() => setShowInstallGuide(true)} className="w-full sm:w-auto h-14 px-6 bg-white hover:bg-slate-50 text-slate-600 rounded-2xl font-bold text-lg border border-slate-200 flex items-center justify-center gap-3"><PlusSquare className="w-5 h-5" /><span>Add to Home</span></button>}
+                  {(isAndroid || isDesktop) && <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className={`w-full sm:w-auto h-14 px-8 rounded-2xl font-bold text-lg border transition-all flex items-center justify-center gap-3 ${isDesktop ? "bg-white hover:bg-slate-50 text-slate-700 border-slate-200" : "bg-[#FF9500] hover:bg-orange-600 text-white shadow-xl shadow-orange-500/25"}`}><Download className="w-5 h-5" /><span>Get on Play Store</span></a>}                  {isIOS && !isStandalone && <button onClick={() => setShowInstallGuide(true)} className="w-full sm:w-auto h-14 px-6 bg-white hover:bg-slate-50 text-slate-600 rounded-2xl font-bold text-lg border border-slate-200 flex items-center justify-center gap-3"><PlusSquare className="w-5 h-5" /><span>Add to Home</span></button>}
                 </div>
               </div>
 
